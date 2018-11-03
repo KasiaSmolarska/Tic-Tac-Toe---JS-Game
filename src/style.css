@@ -1,37 +1,81 @@
 .board{
-    width:246px;
-    height:246px;
+    width:244px;
+    height:244px;
+    display: inline-block;
+    margin: 25px 0;
+}
+
+.game{
+    text-align: center;
 }
 
 li{
     width:80px;
     height:80px;
-    border:1px solid #000;
-
+    background: #fff;
 }
 
 ul{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     list-style-type: none;
+    grid-gap: 1px;
     margin: 0;
     padding: 0;
+    border:1px solid #fff;
+    background: #DEDEDE;
+    margin-top: -1px;
 }
 
 .tile{
     position: relative;
-    font-size: 50px;
     text-align: center;
     align-items: center;
     justify-content: center;
     display: flex;
 }
 
-.tile--x:before{
-    content:'x';
-    color:#39BCD4;
+.tile--x path{
+    stroke-dasharray: 100 1000;
+    stroke-dashoffset: 101;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill-opacity:0;
+    stroke: #3989D4;
+    stroke-width: 4px;
+    transform-origin: 50% 50% 0;
 }
-.tile--y:before{
-    content:'y';
-    color:#3989D4;
+
+
+.cross__path--right {
+  animation: ease 0.8s normal forwards 1 running dash;
+}
+.cross__path--left {
+  animation: .8s ease 0.3s normal forwards 1 running dash;
+}
+
+.tile--x svg{
+    width:96px;
+    height: 96px;
+}
+
+.tile--o svg{
+    height: 48px;
+    width: 48px;
+}
+.tile--o path{
+    stroke-dasharray: 100 1000;
+    stroke-dashoffset: 101;
+    animation: dash 1s linear forwards;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill-opacity:0;
+    stroke:#39BCD4;
+    stroke-width: 4px;
+}
+
+@keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
 }
