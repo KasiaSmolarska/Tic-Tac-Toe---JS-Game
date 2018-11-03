@@ -18,13 +18,15 @@ class Tile {
         )
     }
     setValue(value){
-        this.value = value;
-        if (value === 'x') {
-            this.li.classList.add('tile--x');
-        } else if( value === 'y'){
-            this.li.classList.add('tile--y');
-        } else{
-            console.warn('zła wartość, podałaś: ', value);
+        if(this.value === undefined){
+            this.value = value;
+            if (value === 'x') {
+                this.li.classList.add('tile--x');
+            } else if( value === 'y'){
+                this.li.classList.add('tile--y');
+            } else{
+                console.warn('zła wartość, podałaś: ', value);
+            }
         }
     }
 }

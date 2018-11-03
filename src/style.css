@@ -17,3 +17,21 @@ ul{
     margin: 0;
     padding: 0;
 }
+
+.tile{
+    position: relative;
+    font-size: 50px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.tile--x:before{
+    content:'x';
+    color:#39BCD4;
+}
+.tile--y:before{
+    content:'y';
+    color:#3989D4;
+}
