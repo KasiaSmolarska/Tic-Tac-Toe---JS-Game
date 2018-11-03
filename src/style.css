@@ -1,0 +1,19 @@
+.board{
+    width:246px;
+    height:246px;
+}
+
+li{
+    width:80px;
+    height:80px;
+    border:1px solid #000;
+
+}
+
+ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
