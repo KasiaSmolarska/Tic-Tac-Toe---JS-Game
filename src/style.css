@@ -9,6 +9,11 @@
     text-align: center;
 }
 
+.game__stats{
+    display:flex;
+    justify-content: center;
+}
+
 li{
     width:80px;
     height:80px;
