@@ -5,6 +5,7 @@ class Board {
         this.xWins = 0;
         this.oWins = 0;
         this.draws = 0;
+        this.isBloked = false;
         for (let x = 0; x < 3; x++) {
             this.tiles.push([]);
             for (let y = 0; y < 3; y++) {
@@ -16,9 +17,11 @@ class Board {
     }
 
     setNewTileValue(tile){
-        tile.setValue(this.currentPlayer);
-        this.checkTheResult();
-        this.changeCurrentPlayer();
+        if (!this.isBloked) {
+            tile.setValue(this.currentPlayer);
+            this.checkTheResult();
+            this.changeCurrentPlayer();
+        }
     }
     changeCurrentPlayer(){
         if (this.currentPlayer === 'x') {
@@ -90,6 +93,7 @@ class Board {
         }else{
             this.draws++;
         }
+        this.isBloked = true;
     }
 }
 const myBoard = new Board();

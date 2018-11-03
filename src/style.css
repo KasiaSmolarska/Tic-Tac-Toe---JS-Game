@@ -1,3 +1,8 @@
+body{
+    font-family: 'Niramit', sans-serif;
+}
+
+
 .board{
     width:244px;
     height:244px;
@@ -9,9 +14,33 @@
     text-align: center;
 }
 
+.game__stats-o-wins{
+    color:#39BCD4;
+}
+
+.game__stats-x-wins{
+    color: #3E8CD5;
+}
+
+.game__stats-o-wins svg{
+    width:16px;
+    height:16px;
+}
+
+.game__stats-o-wins path{
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill-opacity:0;
+    stroke:#39BCD4;
+    stroke-width: 4px;
+}
+
 .game__stats{
     display:flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items:center;
+    font-weight: bold;
+    margin: 0 calc(50% - 122px);
 }
 
 li{
