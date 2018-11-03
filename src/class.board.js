@@ -1,11 +1,16 @@
 class Board {
     constructor(){
         this.currentPlayer = 'x';
-        this.tiles = [];
         this.xWins = 0;
         this.oWins = 0;
         this.draws = 0;
+        this.createBoard();
+    }
+
+    createBoard(){
+        this.tiles = [];
         this.isBloked = false;
+        boardContainer.innerHTML = '';
         for (let x = 0; x < 3; x++) {
             this.tiles.push([]);
             for (let y = 0; y < 3; y++) {
@@ -92,6 +97,7 @@ class Board {
             document.querySelector('.game__stats-o-wins-value').innerHTML = this.oWins;
         }else{
             this.draws++;
+            document.querySelector('.game__stats-draws').innerHTML = this.draws;
         }
         this.isBloked = true;
     }

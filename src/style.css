@@ -4,8 +4,8 @@ body{
 
 
 .board{
-    width:244px;
-    height:244px;
+    width:243px;
+    height:243px;
     display: inline-block;
     margin: 25px 0;
 }
