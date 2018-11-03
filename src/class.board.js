@@ -97,7 +97,7 @@ class Board {
             document.querySelector('.game__stats-o-wins-value').innerHTML = this.oWins;
         }else{
             this.draws++;
-            document.querySelector('.game__stats-draws').innerHTML = this.draws;
+            document.querySelector('.game__stats-draws-value').innerHTML = this.draws;
         }
         this.isBloked = true;
     }
