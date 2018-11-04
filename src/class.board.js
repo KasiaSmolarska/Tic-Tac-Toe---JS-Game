@@ -43,7 +43,8 @@ class Board {
             const valueOfTile3 = row[2].getValue();
 
             if(valueOfTile1 === valueOfTile2 && valueOfTile2 === valueOfTile3 && valueOfTile1 === valueOfTile3 && valueOfTile1 !== undefined){
-               return this.showModalInfo(valueOfTile1);
+                this.highlightWinningTiles('row' + i);
+                return this.showModalInfo(valueOfTile1);
             }
         }
 
@@ -54,11 +55,18 @@ class Board {
             const valueOfTile3 = this.tiles[2][i].getValue();
 
             if(valueOfTile1 === valueOfTile2 && valueOfTile2 === valueOfTile3 && valueOfTile1 === valueOfTile3 && valueOfTile1 !== undefined){
+                this.highlightWinningTiles('col' + i);
                 return this.showModalInfo(valueOfTile1);
              }
         }
 
         if((this.tiles[0][0].getValue() === this.tiles[1][1].getValue() && this.tiles[0][0].getValue() === this.tiles[2][2].getValue() && this.tiles[2][2].getValue() !== undefined) || (this.tiles[0][2].getValue() === this.tiles[1][1].getValue() && this.tiles[0][2].getValue() === this.tiles[2][0].getValue() && this.tiles[2][0].getValue() !== undefined)){
+            
+            if(this.tiles[2][2].getValue() === this.tiles[0][0].getValue()){
+                this.highlightWinningTiles('cross1');
+            } else if(this.tiles[2][0].getValue() === this.tiles[0][2].getValue()){
+                this.highlightWinningTiles('cross2');
+            }
             return this.showModalInfo( this.tiles[1][1].getValue());
         }
 
@@ -77,9 +85,19 @@ class Board {
                 }
             }
 
-
         }
     }
+
+    highlightWinningTiles(position){
+        const positionToTiles = {
+            'row0' : [this.tiles[0][0], this.tiles[0][1], this.tiles[0][2]]
+        }
+        const winnersTiles = positionToTiles[position];
+        winnersTiles.forEach(tile => {
+            tile.highlight();
+        });
+    }
+
     showModalInfo(info){
         this.updateStats(info);
         if(info){

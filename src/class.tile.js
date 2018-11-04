@@ -12,6 +12,9 @@ class Tile {
     getValue(){
         return this.value;
     }
+    highlight(){
+        this.li.classList.add('hightlite');
+    }
     onClick(callback){
         this.li.addEventListener('click', () =>
             callback(this)
