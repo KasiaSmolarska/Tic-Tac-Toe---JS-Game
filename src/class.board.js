@@ -30,7 +30,7 @@ class Board {
     }
     changeCurrentPlayer(){
         if (this.currentPlayer === 'x') {
-            this.currentPlayer = 'y';
+            this.currentPlayer = 'o';
         }else{
             this.currentPlayer = 'x';
         };
@@ -94,7 +94,7 @@ class Board {
             'row1' : [this.tiles[1][0], this.tiles[1][1], this.tiles[1][2]],
             'row2' : [this.tiles[2][0], this.tiles[2][1], this.tiles[2][2]],
             'col0' : [this.tiles[0][0], this.tiles[1][0], this.tiles[2][0]],
-            'col1' : [this.tiles[0][1], this.tiles[1][1], this.tiles[1][2]],
+            'col1' : [this.tiles[0][1], this.tiles[1][1], this.tiles[2][1]],
             'col2' : [this.tiles[0][2], this.tiles[1][2], this.tiles[2][2]],
             'cross1': [this.tiles[0][0], this.tiles[1][1], this.tiles[2][2]],
             'cross2': [this.tiles[0][2], this.tiles[0][1], this.tiles[2][0]]
@@ -117,7 +117,7 @@ class Board {
         if(winner === 'x'){
             this.xWins++;
             document.querySelector('.game__stats-x-wins-value').innerHTML = this.xWins;
-        }else if(winner == 'y'){
+        }else if(winner == 'o'){
             this.oWins++;
             document.querySelector('.game__stats-o-wins-value').innerHTML = this.oWins;
         }else{

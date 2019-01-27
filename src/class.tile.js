@@ -2,10 +2,10 @@ const boardContainer = document.querySelector('.board__container');
 
 
 class Tile {
-    constructor(x,y){
+    constructor(x,o){
         this.li = document.createElement('li');
         this.li.dataset.col = x;
-        this.li.dataset.row = y;
+        this.li.dataset.row = o;
         this.li.classList.add('tile');
         boardContainer.appendChild(this.li);
     }
@@ -28,7 +28,7 @@ class Tile {
             if (value === 'x') {
                 this.li.classList.add('tile--x');
                 this.li.innerHTML = x;
-            } else if( value === 'y'){
+            } else if( value === 'o'){
                 this.li.classList.add('tile--o');
                 this.li.innerHTML = o;
             } else{

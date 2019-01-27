@@ -67,7 +67,10 @@ ul{
     align-items: center;
     justify-content: center;
     display: flex;
+    transition: all .3;
 }
+
+
 
 .tile--x path{
     stroke-dasharray: 100 1000;
@@ -108,8 +111,57 @@ ul{
     stroke-width: 4px;
 }
 
+
+.tile--o.hightlite{
+    background:#39BCD4;
+    animation: blush 2s ease-out infinite;
+}
+
+.tile--x.hightlite{
+    background:#3E8CD5;
+    animation: blush-x 2s ease-out infinite;
+}
+
+.tile--o.hightlite path, .tile--x.hightlite path{
+    stroke:#fff;
+}
+
+
+button{
+    background: #DEDEDE;
+    padding: 6px 12px 5px;
+    border: 1px solid #000;
+    font-size: 16px;
+    letter-spacing: .02em;
+}
+
 @keyframes dash {
     to {
       stroke-dashoffset: 0;
+    }
+}
+
+
+@keyframes blush {
+    0% {
+        background: #39BCD4;
+    }
+    50% {
+        background: #39bcd4ad;
+    }
+    100% {
+        background: #39BCD4;
+    }
+}
+
+@keyframes blush-x {
+    0% {
+        background: #3E8CD5;
+    }
+    50% {
+        background: rgba(62, 140, 213, 0.863);
+    }
+    100% {
+        background: #3E8CD5;
     }
 }
