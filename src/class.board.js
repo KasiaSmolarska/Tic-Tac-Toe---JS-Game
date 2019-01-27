@@ -90,7 +90,14 @@ class Board {
 
     highlightWinningTiles(position){
         const positionToTiles = {
-            'row0' : [this.tiles[0][0], this.tiles[0][1], this.tiles[0][2]]
+            'row0' : [this.tiles[0][0], this.tiles[0][1], this.tiles[0][2]],
+            'row1' : [this.tiles[1][0], this.tiles[1][1], this.tiles[1][2]],
+            'row2' : [this.tiles[2][0], this.tiles[2][1], this.tiles[2][2]],
+            'col0' : [this.tiles[0][0], this.tiles[1][0], this.tiles[2][0]],
+            'col1' : [this.tiles[0][1], this.tiles[1][1], this.tiles[1][2]],
+            'col2' : [this.tiles[0][2], this.tiles[1][2], this.tiles[2][2]],
+            'cross1': [this.tiles[0][0], this.tiles[1][1], this.tiles[2][2]],
+            'cross2': [this.tiles[0][2], this.tiles[0][1], this.tiles[2][0]]
         }
         const winnersTiles = positionToTiles[position];
         winnersTiles.forEach(tile => {
